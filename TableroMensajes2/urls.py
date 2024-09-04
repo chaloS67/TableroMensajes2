@@ -19,5 +19,5 @@ from django.urls import include, path
 
 urlpatterns = [
    
-    path ('.', include("mensajes.urls"))
+    path ('', include('mensajes.urls'))
 ]
