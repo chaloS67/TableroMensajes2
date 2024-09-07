@@ -5,7 +5,13 @@
 {% block header %}
     <h1>Bienvenido creacion de mensajes</h1>
 {% endblock %}
+    
 
 {% block content %}
     <p>Crear mensaje</p>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">guardar</button>
+    </form>
 {% endblock %}

@@ -1,0 +1,51 @@
+<!-- templates/mensajes.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensajes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .message-box {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .message-sender {
+            font-weight: bold;
+            color: #333;
+        }
+        .message-text {
+            margin-top: 5px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Mensajes de {{ usuario }}</h1>
+
+    <!-- Recorrer la lista de mensajes -->
+    <div>
+        {% for mensaje in mensajes %}
+        <div class="message-box">
+            
+            {% if mensaje.tipo == "recivido" %}
+            <p class="message-sender">Recivido de {{ mensaje.usuario_2 }}</p>
+            {% else %}
+            <p class="message-sender">Enviado a {{ mensaje.usuario_2 }}</p>
+            {% endif %}
+            <p class="message-text">{{ mensaje.texto }}</p>
+            <button type="submit">eliminar</button>
+        </div>
+        {% empty %}
+        <p>No hay mensajes para mostrar.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

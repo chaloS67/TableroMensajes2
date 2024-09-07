@@ -1,12 +1,14 @@
-{% extends "base.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Mensaje</title>
+</head>
+<body>
+    <h1>Detalles del Mensaje Guardado</h1>
+    <p><strong>Remitente:</strong> {{ mensaje.remitente }}</p>
+    <p><strong>Destinatario:</strong> {{ mensaje.destinatario }}</p>
+    <p><strong>Texto:</strong> {{ mensaje.texto }}</p>
 
-{% block title %} Mensajes {% endblock %}
-
-{% block header %}
-    <h1>recibidos</h1>
-    <h2>enviados</h2>
-{% endblock %}
-
-{% block content %}
-
-{% endblock %}
+</body>
+</html>
