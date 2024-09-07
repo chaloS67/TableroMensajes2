@@ -5,9 +5,14 @@
 {% block header %}
     <h1>Bienvenido creacion de mensajes</h1>
 {% endblock %}
-    
 
 {% block content %}
+<p>Buscar mensajes</p>
+<form action="{% url 'ver_mensajes' %}" method="POST">
+    <input name="usuario" value="{{ usuario }}">
+    {% csrf_token %}
+    <button type="submit">Buscar</button>
+</form>
     <p>Crear mensaje</p>
     <form method="POST">
         {% csrf_token %}

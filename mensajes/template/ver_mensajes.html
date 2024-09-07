@@ -41,11 +41,20 @@
             <p class="message-sender">Enviado a {{ mensaje.usuario_2 }}</p>
             {% endif %}
             <p class="message-text">{{ mensaje.texto }}</p>
-            <button type="submit">eliminar</button>
+            <form action="{% url 'eliminar_mensaje' mensaje.id %}" method="POST">
+                <input type="hidden" name="usuario" value="{{ usuario }}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+            </form>
         </div>
         {% empty %}
         <p>No hay mensajes para mostrar.</p>
         {% endfor %}
     </div>
 </body>
+<footer>
+    <div>
+        <a href="{% url 'home' %}" class="btn btn-success">Ir al Home</a>    
+    </div>
+</footer>
 </html>

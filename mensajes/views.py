@@ -42,4 +42,12 @@ def ver_mensajes_view (request, usuario):
 
     return render (request,'ver_mensajes.html', {'mensajes': mensajes, 'usuario':usuario})
 
+def eliminar_mensaje (request, mensaje_id):
+    usuario = request.POST.get('usuario') 
+    mensaje= get_object_or_404(Tablero, id=mensaje_id)
+    mensaje.delete()
+    return redirect(ver_mensajes_view, usuario=usuario )
 
+def ver_mensajes (request): 
+    usuario = request.POST.get('usuario') 
+    return redirect(ver_mensajes_view, usuario=usuario )
