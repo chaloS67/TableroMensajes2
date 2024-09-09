@@ -24,11 +24,10 @@ def home_view (request):
 
 class MensajeDeleteView(DeleteView):
     model = Tablero
-    template_name = 'mensaje_confirmar_eliminar.html'
     success_url = reverse_lazy('ver_mensajes')
 
-def eliminar_view (request):
-    return render (request,'eliminar.html')
+#def eliminar_view (request):
+    #return render (request,'eliminar.html')
 
 def ver_view (request, mensaje_id):
 
@@ -47,7 +46,6 @@ def ver_mensajes_view (request, usuario):
         mensajes.append(mensaje)
 
     return render (request,'ver_mensajes.html', {'mensajes': mensajes, 'usuario':usuario})
-
 
 def ver_mensajes (request): 
     usuario = request.POST.get('usuario') 

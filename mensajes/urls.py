@@ -5,7 +5,7 @@ urlpatterns = [
    
 
     path('', views.home_view, name='home'),
-    path('eliminar/', views.eliminar_view, name='eliminar'),
+    ##path('eliminar/', views.eliminar_view, name='eliminar'),
     path('ver/<int:mensaje_id>/', views.ver_view, name='ver'),
     path('mensajes/usuario/<str:usuario>/', views.ver_mensajes_view, name='ver_mensajes'),
     ##path('eliminar_mensaje/<int:mensaje_id>/', views.eliminar_mensaje, name='eliminar_mensaje'),

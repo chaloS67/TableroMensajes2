@@ -1,33 +1,16 @@
 <!-- templates/mensajes.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensajes</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .message-box {
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-        .message-sender {
-            font-weight: bold;
-            color: #333;
-        }
-        .message-text {
-            margin-top: 5px;
-            color: #555;
-        }
-    </style>
-</head>
-<body>
+
+{% extends "base.html" %}
+
+{% block title %}Mensajeria{% endblock %}
+
+{% block header %}
+
+    <h1>Mensajes</h1>
+
+{% endblock %}
+
+    {% block content %} 
     <h1>Lista de Mensajes de {{ usuario }}</h1>
 
     <!-- Recorrer la lista de mensajes -->
@@ -48,13 +31,10 @@
             </form>
         </div>
         {% empty %}
-        <p>Mensaje eliminado correctamente.</p>
+        <p>no hay mensajes para mostrar.</p>
         {% endfor %}
     </div>
-</body>
-<footer>
-    <div>
-        <a href="{% url 'home' %}" class="btn btn-success">Ir al Home</a>    
-    </div>
-</footer>
-</html>
+<div>
+    <a href="{% url 'home' %}" class="btn btn-success">Ir al Home</a>    
+</div>
+{% endblock %}
