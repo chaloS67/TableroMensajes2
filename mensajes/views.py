@@ -29,7 +29,7 @@ class MensajeDeleteView(DeleteView):
 #def eliminar_view (request):
     #return render (request,'eliminar.html')
 
-def ver_view (request, mensaje_id):
+def ver_view (request, mensaje_id):   ## Muestra el mensaje grabado ##
 
     mensaje= get_object_or_404(Tablero, id=mensaje_id)
     return render (request,'ver.html', {'mensaje': mensaje})
@@ -49,4 +49,7 @@ def ver_mensajes_view (request, usuario):
 
 def ver_mensajes (request): 
     usuario = request.POST.get('usuario') 
-    return redirect(ver_mensajes_view, usuario=usuario )
+    return redirect(ver_mensajes_view, usuario=usuario)
+
+def buscar_mensajes (request):
+    return render(request,'buscar.html')

@@ -7,17 +7,12 @@
 {% endblock %}
 
 {% block content %}
-  <!--<p>Buscar mensajes</p>
+
+ <p>Buscar mensajes</p>
     <form action="{% url 'ver_mensajes' %}" method="POST">
         <input type = "text" name="usuario" required value="{{ usuario }}">
         {% csrf_token %}
-        <button type="submit">Buscar</button>  -->
-    </form>
-    <p>Crear mensaje</p>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">guardar</button>
-    </form>
+        <button type="submit">Buscar</button>     
+    </form> 
     
 {% endblock %}

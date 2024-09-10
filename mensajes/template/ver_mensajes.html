@@ -24,7 +24,7 @@
             <p class="message-sender">Enviado a {{ mensaje.usuario_2 }}</p>
             {% endif %}
             <p class="message-text">{{ mensaje.texto }}</p>
-            <form action="{% url 'eliminar_mensaje' mensaje.id %}" method="POST">
+            <form action="{% url 'eliminar_mensaje' mensaje.id%}" method="POST">
                 <input type="hidden" name="usuario" value="{{ usuario }}">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-danger">Eliminar</button>

@@ -11,5 +11,5 @@ urlpatterns = [
     ##path('eliminar_mensaje/<int:mensaje_id>/', views.eliminar_mensaje, name='eliminar_mensaje'),
     path('ver_mensajes/', views.ver_mensajes, name='ver_mensajes'),
     path('eliminar_mensaje/<int:pk>/',views.MensajeDeleteView.as_view(), name='eliminar_mensaje'),
-
+    path('buscar_mensajes/', views.buscar_mensajes, name='buscar_mensajes')
 ]
