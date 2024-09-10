@@ -19,4 +19,12 @@
 
     6- Abre tu navegador y navega http://localhost:8000 o al puerto que le asignes
 
+## Uso
+
+    - Usa la interface del home para escribir un mensajes llenar los campos 
+    - Luego preciona guardar y se mostrara el mensaje guardado
+    - Para buscar dirigirse hasta busuqeda atraves de la barra de navegacion e ingresar el usuario del cual se quieren listar los mensajes.
+    -Si se desea eliminar algun mensaje listado apretar en eliminar 
+
+
     
